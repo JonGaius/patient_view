@@ -1,0 +1,523 @@
+.bfm-simple-page{
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  @extend %flex-center;
+  &__container{
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 920px;
+  }
+}
+.bfm-simple-page-header{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  margin-bottom: 65px;
+  svg{
+    width: 170px;
+    height: 45px;
+  }
+  &__text{
+    h1{
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+}
+.bfm-simple-page-grid{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  justify-content: space-between;
+  &__item{
+    position: relative;
+    width: calc(100% / 4 - 10px);
+  }
+}
+.bfm-simple-page-grid-item{
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: $neutral_100;
+  border-radius: 12px;
+  min-height: 300px;
+  &__image{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: auto;
+    img{
+      @extend %image-center;
+    }
+  }
+  &__info{
+    position: relative;
+    width: 100%;
+    strong{
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.bfm-page{
+  position: relative;
+  width: 100%;
+  max-width: 1480px;
+  padding: 50px;
+  &__head1{
+    h1{
+      font-size: 48px;
+    }
+    h2{
+      font-size: 32px;
+    }
+  }
+  &__container{
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+.bfm-p-page{
+  position: relative;
+  width: 100%;
+  max-width: 1480px;
+  &__head1{
+    h1{
+      font-size: 48px;
+    }
+    h2{
+      font-size: 32px;
+    }
+  }
+  &__container{
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+.bfm-page-head2{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0 20px;
+  &__action{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    .bfm-button{
+      height: 45px;
+    }
+  }
+}
+.bfm-p-page-head2{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0 20px;
+  &__action{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    .bfm-button{
+      height: 45px;
+    }
+  }
+}
+.bfm-calendar{
+  position: relative;
+  width: 100%;
+  height: 80svh;
+
+}
+.bfm-searchAndActcions{
+  position: relative;
+  width: auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  .bfm-button{
+    height: 45px;
+  }
+}
+.bfm-searchAndActcions-search{
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.bfm-page-table{
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  &__tags{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}
+.bfm-p-page-table{
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  &__tags{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}
+.bfm-page-rdvs{
+  position: relative;
+  width: calc(100% - 50px);
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.bfm-p-page-rdvs{
+  position: relative;
+  width: calc(100% - 50px);
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.bfm-page-rdv{
+  position: relative;
+  height: auto;
+  width: calc(100% / 4 - 20px);
+}
+.bfm-p-page-rdv{
+  position: relative;
+  height: auto;
+  width: calc(100% / 4 - 20px);
+}
+.bfm-page-info{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  &__side{
+    position: relative;
+    width: 260px;
+  }
+  &__container{
+    position: relative;
+    width: calc(100% - 280px);
+    padding: 20px;
+    background: $neutral_100;
+    border-radius: 12px;
+  }
+  &__image{
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    img{
+      @extend %image-center;
+      pointer-events: none;
+    }
+  }
+}
+.bfm-p-page-info{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  &__side{
+    position: relative;
+    width: 260px;
+  }
+  &__container{
+    position: relative;
+    width: calc(100% - 280px);
+    padding: 20px;
+    background: $neutral_100;
+    border-radius: 12px;
+  }
+  &__image{
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    img{
+      @extend %image-center;
+      pointer-events: none;
+    }
+  }
+}
+.bfm-page-info-details{
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid $neutral_200;
+  h2{
+    font-size: 18px;
+  }
+  &__container{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  &__inf{
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-size: 16px;
+  }
+  &__actions{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-top: 30px;
+    button{
+      width: 100%;
+      justify-content: flex-start;
+      height: 45px;
+      border-radius: 8px;
+      svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+.bfm-p-page-info-details{
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid $neutral_200;
+  h2{
+    font-size: 18px;
+  }
+  &__container{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  &__inf{
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    font-size: 16px;
+  }
+  &__actions{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-top: 30px;
+    button{
+      width: 100%;
+      justify-content: flex-start;
+      height: 45px;
+      border-radius: 8px;
+      svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+.bfm-page-info_rdv{
+  &__actes{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    h2{
+      font-size: 18px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $neutral_1000;
+      margin-bottom: 5px;
+    }
+  }
+  &__motif{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    h2{
+      font-size: 18px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $neutral_1000;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+}
+.bfm-p-page-info_rdv{
+  &__actes{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    h2{
+      font-size: 18px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $neutral_1000;
+      margin-bottom: 5px;
+    }
+  }
+  &__motif{
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    h2{
+      font-size: 18px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $neutral_1000;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+}
+.bfm-page-info_rdv-patient{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  h2{
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $neutral_1000;
+    margin-bottom: 5px;
+  }
+  h1{
+    font-size: 32px;
+  }
+  &__details{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    &--text{
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+  }
+}
+.bfm-p-page-info_rdv-patient{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  h2{
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $neutral_1000;
+    margin-bottom: 5px;
+  }
+  h1{
+    font-size: 32px;
+  }
+  &__details{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    &--text{
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+  }
+}
+
+.bfm-p-home{
+  position: relative;
+  width: 100%;
+  &__head{
+    h1{
+      font-size: 48px;
+    }
+    h2{
+      font-size: 32px;
+    }
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__actu{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  &__list{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: $neutral_100;
+    border-radius: 12px;
+    h2{
+      font-size: 18px;
+    }
+  }
+}

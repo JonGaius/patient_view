@@ -1,0 +1,912 @@
+.bfm-layout-auth__image{
+  position: fixed;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  width: 50%;
+  height: 100svh;
+  background: $primary_700;
+  img{
+    position: absolute;
+    bottom: -8svh;
+    right: -20px;
+    height: 110svh;
+    width: auto;
+  }
+}
+.bfm-layout-auth-formulaire{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  min-height: 100svh;
+  padding: 30px 20px;
+  &__container{
+    position: relative;
+    width: 100%;
+    min-height: calc(100svh - 60px);
+    @extend %flex-center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__main{
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  &__header{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    svg{
+      width: 170px;
+      height: 45px;
+    }
+    h1{
+      font-size: 64px;
+      font-weight: 800;
+      color: $neutral_1000;
+    }
+    span{
+      font-size: 14px;
+      color: $neutral_700
+    }
+  }
+  &__logo{
+    margin-bottom: 30px;
+  }
+}
+.bfm-layout-auth-formulaire-partners{
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  justify-content: space-between;
+  img{
+    pointer-events: none;
+  }
+}
+.bfm-layout-auth-footer{
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  span{
+    font-weight: bold;
+  }
+}
+.bfm-layout-auth-question{
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  z-index: 6;
+  button{
+    width: 60px;
+    height: 60px;
+    color: $primary_700;
+    background: $secondary_700;
+    @extend %flex-center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 36px;
+    border-radius: 50%;
+  }
+}
+.bfm-layout-auth-form{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  margin-bottom: 50px;
+  &__group{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  &__action{
+    position: relative;
+    width: 100%;
+    button{
+      width: 100%;
+    }
+  }
+}
+.bfm-layout-auth__info{
+  text-align: center;
+}
+
+.bfm-main{
+  position: relative;
+  margin-left: auto;
+  width: calc(100% - 280px);
+  min-height: 100svh;
+  transition: 0.3s ease;
+  &.is--open{
+    width: calc(100% - 80px);
+  }
+}
+
+.bfm-navigation{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100svh;
+  z-index: 9;
+  background: $neutral_0;
+  border-right: 1px solid $neutral_400;
+  padding: 60px 20px;
+  transition: 0.3s ease;
+  &.is--open{
+    width: 80px;
+    padding: 50px 10px;
+    .bfm-navigation__logo{
+      position: relative;
+      width: 100%;
+      padding: 5px;
+      background: $primary_700;
+      border-radius: 8px;
+      @extend %flex-center;
+      height: 50px;
+      svg{
+        width: auto;
+        height: 30px;
+        path{
+          fill: $secondary_700;
+        }
+      }
+    }
+    .bfm-navigation-menu-item{
+      @extend %flex-center;
+      span{
+        display: none;
+      }
+      a, button{
+        width: 60px;
+        gap: 0;
+        justify-content: center;
+      }
+    }
+    .bfm-navigation-bottom{
+      padding: 10px;
+    }
+  }
+  ul{
+    list-style: none;
+  }
+  &__btn{
+    position: absolute;
+    width: 35px;
+    height: 25px;
+    right: -20px;
+    z-index: 3;
+    top: 60px;
+    background: $neutral_0;
+    border: 1px solid $neutral_400;
+    border-radius: 4px;
+    @extend %flex-center;
+    .angle{
+      width: 10px;
+      height: 10px;
+      border: 2px solid $neutral_1000;
+      transform: rotate(45deg);
+      border-bottom: none;
+      border-left: none;
+      margin-left: -5px;
+    }
+  }
+
+  &__header{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 8svh;
+    svg{
+      width: 68px;
+      height: 45px;
+    }
+  }
+}
+.bfm-navigation-menu{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.bfm-navigation-menu-item{
+  position: relative;
+  width: 100%;
+  &.is--danger{
+    a, button{
+      background: $danger_200;
+      &.active, &:hover{
+        background: $danger_700;
+
+      }
+    }
+  }
+  a, button{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+    background: $neutral_100;
+    border-radius: 8px;
+    font-weight: 600;
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+    font-size: 16px;
+    transition: 0.3s ease;
+    &.active, &:hover{
+      background: $primary_700;
+      color: $neutral_0;
+      #fill_color{
+        fill: currentColor;
+      }
+      #stroke_color{
+        stroke: currentColor;
+      }
+    }
+  }
+}
+.bfm-navigation-bottom{
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  button{
+    width: 100%;
+  }
+}
+.bfm-navigation-menu-list{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.bfm-layout-right{
+  position: fixed;
+  right: 50px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  z-index: 999;
+  &__input{
+    position: relative;
+    select{
+      background: $neutral_0;
+      border: 1px solid $neutral_400;
+      border-radius: 12px;
+      height: 44px;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+  }
+}
+.bfm-auth-info{
+  position: relative;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  &__avatar{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    overflow: hidden;
+    img{
+      @extend %image-center;
+    }
+  }
+  &__info{
+    display: none;
+    flex-direction: column;
+    row-gap: 5px;
+    text-align: right;
+    strong{
+      font-size: 16px;
+    }
+    span{
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}
+
+.bfm-meet-layout{
+  position: relative;
+  width: 100%;
+  video{
+    pointer-events: none;
+  }
+  &__back{
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 999;
+    button{
+      background: $neutral_0;
+    }
+  }
+  &__container{
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.bfm-meet-layout-plain{
+  position: relative;
+  width: calc(100% - 380px);
+  height: 100%;
+  background: $neutral_100;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.bfm-meet-layout-size{
+  position: relative;
+  width: 360px;
+  height: 100%;
+  background: $neutral_100;
+  border-radius: 12px;
+}
+.bfm-meet-layout-plain__video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: $neutral_1000;
+  overflow: hidden;
+  @extend %flex-center;
+  transition: 0.5s ease;
+
+  video{
+    height: 100%;
+    width: auto;
+  }
+  span{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 5px;
+    background: rgba($color: $neutral_800, $alpha: 0.5);
+    color: $neutral_0;
+    border-radius: 8px;
+  }
+  &.is--short{
+    position: absolute;
+    width: 240px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9;
+    video{
+      @extend %image-center;
+    }
+  }
+}
+.bfm-meet-layout-plain__actions{
+  position: absolute;
+  width: 100%;
+  max-width: 480px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+.bfm-meet-layout-plain-action{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: $neutral_0;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+  #fill_color{
+    fill: currentColor;
+  }
+  #stroke_color{
+    stroke: currentColor;
+  }
+  &.active{
+    background: $neutral_700;
+    color: $neutral_0;
+  }
+  &.is--danger{
+    background: $danger_700;
+    color: $neutral_0;
+  }
+  &.is--primary{
+    background: $primary_700;
+    color: $neutral_0;
+  }
+  &.is--secondary{
+    background: $primary_200;
+    color: $primary_700;
+  }
+}
+.bfm-meet-layout-plain__options{
+  position: absolute;
+  width: 340px;
+  padding: 10px;
+  border-radius: 8px;
+  bottom: 10px;
+  right: 10px;
+  background: $neutral_0;
+  min-height: 300px;
+  transition: 0.3s ease;
+  transform: translateY(100%);
+  &.is--open{
+    transform: translateY(0);
+  }
+  &--container{
+    position: relative;
+    width: 100%;
+    h2{
+      font-size: 18px;
+      padding: 5px 5px;
+    }
+  }
+  &--close{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    @extend %flex-center;
+    background: $neutral_100;
+    z-index: 2;
+    border-radius: 8px;
+    svg{
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+.bfm-meet-layout-plain-option__list{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 25px;
+}
+.bfm-meet-layout-plain-option{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background: $neutral_100;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 45px;
+}
+.bfm-meet-layout-size{
+  position: relative;
+  padding: 15px;
+
+  &__info{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 200px);
+    padding-bottom: 20px;
+    overflow-y: auto;
+    h2{
+      font-size: 16px;
+    }
+  }
+  &__user{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: $neutral_1000;
+    overflow: hidden;
+    border-radius: 12px;
+    @extend %flex-center;
+    &--empty{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 100%;
+      height: 100%;
+      background: $neutral_1000;
+      @extend %flex-center;
+    }
+    &--mute{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      background: $neutral_400;
+      border-radius: 50%;
+      @extend %flex-center;
+      svg{
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &--avatar{
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;box-shadow: 10px 6px 40px rgba(255, 0, 153, 0.4);
+      @extend %flex-center;
+      img{
+        @extend %image-center;
+      }
+    }
+    video{
+      width: auto;
+      height: 100%;
+      background: $neutral_0;
+    }
+    span{
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      padding: 5px;
+      background: rgba($color: $neutral_900, $alpha: 0.9);
+      color: $neutral_0;
+      border-radius: 8px;
+    }
+  }
+}
+.bfm-meet-layout-plain-nobody{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  @extend %flex-center;
+  flex-direction: column;
+  row-gap: 20px;
+  &__illustration{
+    svg{
+      width: 300px;
+      height: 300px;
+    }
+  }
+  &__text{
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    text-align: center;
+    margin-bottom: 20px;
+    strong{
+      font-size: 22px;
+    }
+  }
+  &__actions{
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 30px;
+  }
+}
+
+
+.bfm-layout-user-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 99;
+  padding: 5px 20px;
+  &__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 912px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo{
+    svg{
+      width: auto;
+      height: 40px;
+    }
+  }
+  &__actions{
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+
+}
+.bfm-header-btn{
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  @extend %flex-center;
+  background: $neutral_0;
+  transition: 0.3s ease;
+  border: 1px solid $neutral_400;
+  color: $neutral_1000;
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+  #fill_color{
+    fill: currentColor;
+  }
+  #stroke_color{
+    stroke: currentColor;
+  }
+  &:hover{
+    background: $primary_700;
+    color: $neutral_0;
+    span{
+      color: $neutral_0;
+      background: $neutral_1000;
+      display: block;
+      text-align: center;
+    }
+  }
+  &.active{
+    background: $primary_700;
+    color: $neutral_0;
+  }
+  &--danger{
+    background: $danger_200;
+    color: $neutral_1000;
+    border: 1px solid $danger_700;
+    &:hover{
+      background: $danger_700;
+      color: $neutral_0;
+    }
+  }
+  span{
+    position: absolute;
+    padding: 4px;
+    top: calc(100% + 2px);
+    display: none;
+    border-radius: 4px;
+  }
+}
+.bfm-layout-user__main{
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 912px;
+  min-height: 100svh;
+  padding: 75px 0 0;
+
+  margin: auto;
+}
+.bfm-layout-user-footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 10px;
+  font-size: 16px;
+  padding-bottom: 5px;
+  span{
+    font-weight: bold;
+  }
+  &__power{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+}
+
+.bfm-patient-meet-layout{
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background: $neutral_150;
+}
+.bfm-patient-meet-layout-meeting{
+  position: absolute;
+  width: 100%;
+  height: 100svh;
+  padding: 20px;
+  @extend %flex-center;
+  flex-wrap: wrap;
+  gap: 30px;
+  top: 0;
+  left: ß;
+}
+.bfm-patient-meet-layout-meeting-user{
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  height: 45svh;
+  background: $neutral_1000;
+  border-radius: 24px;
+  overflow: hidden;
+  @extend %flex-center;
+  video{
+    position: relative;
+    pointer-events: none;
+    width: auto;
+    height: 100%;
+  }
+  &--empty{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $neutral_1000;
+    @extend %flex-center;
+  }
+  &--mute{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: $neutral_400;
+    border-radius: 50%;
+    @extend %flex-center;
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &--avatar{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;box-shadow: 10px 6px 40px rgba(255, 0, 153, 0.4);
+    @extend %flex-center;
+    img{
+      @extend %image-center;
+    }
+  }
+}
+
+.bfm-patient-meet-layout__options{
+  position: absolute;
+  width: 100%;
+  max-width: 480px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.bfm-patient-meet-layout-option{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: $neutral_0;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  svg{
+    width: 20px;
+    height: 20px;
+  }
+  #fill_color{
+    fill: currentColor;
+  }
+  #stroke_color{
+    stroke: currentColor;
+  }
+  &.active{
+    background: $neutral_700;
+    color: $neutral_0;
+  }
+  &.is--danger{
+    background: $danger_700;
+    color: $neutral_0;
+  }
+  &.is--primary{
+    background: $primary_700;
+    color: $neutral_0;
+  }
+  &.is--secondary{
+    background: $primary_200;
+    color: $primary_700;
+  }
+}
+
+.bfm-patient-meet-layout-meeting-user-waiting{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $neutral_0;
+  @extend %flex-center;
+  text-align: center;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 15px;
+
+  strong{
+    width: 100%;
+    display: block;
+    max-width: 320px;
+    font-size: 24px;
+  }
+}
+.bfm-loading{
+  position: fixed;
+  width: 100%;
+  height: 100svh;
+  top: 0;
+  left: 0;
+  background: $neutral_0;
+  @extend %flex-center;
+  flex-direction: column;
+  row-gap: 10px;
+  text-align: center;
+  z-index: 99;
+  svg{
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    path{
+      fill: $neutral_1000;
+    }
+    animation: animeLogoColor infinite ease-in-out alternate-reverse 1s;
+  }
+}
+@keyframes animeLogoColor {
+  from{
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+  }
+}

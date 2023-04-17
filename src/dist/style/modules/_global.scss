@@ -1,0 +1,40 @@
+*,::after,::before{
+  padding: 0;
+  margin: 0;
+  font-family: $font;
+  box-sizing: border-box;
+  color: inherit;
+}
+::selection{
+  background: $secondary_700;
+  color: $neutral_0;
+}
+.app{
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background: $neutral_0;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+button{
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+span{
+  color: inherit;
+}
+.bfm-divider{
+  position: relative;
+  border: 0.5px solid $neutral_150;
+  width: 100%;
+}
