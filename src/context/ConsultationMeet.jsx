@@ -48,7 +48,7 @@ const ConsultationMeet = ({children}) => {
                         }
                     });
             } catch (e) {
-                console.log('Error accessing media devices', err);
+                console.log('Error accessing media devices', e);
             }
 
         }
