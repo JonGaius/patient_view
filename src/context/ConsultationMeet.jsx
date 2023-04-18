@@ -38,13 +38,22 @@ const ConsultationMeet = ({children}) => {
     )
 
     useEffect(() => {
-        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-            .then((currentStream) => {
-                setStream(currentStream);
-                if(myVideo && myVideo.current){
-                    myVideo.current.srcObject = currentStream;
-                }
-            });
+        const startMediaStream = async () => {
+            try {
+                navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+                    .then((currentStream) => {
+                        setStream(currentStream);
+                        if(myVideo && myVideo.current){
+                            myVideo.current.srcObject = currentStream;
+                        }
+                    });
+            } catch (e) {
+                console.log('Error accessing media devices', err);
+            }
+
+        }
+
+        startMediaStream();
 
         socket.on('me', (id) => setMe(id));
 
