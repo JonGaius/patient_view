@@ -4,8 +4,8 @@ import Peer from 'simple-peer';
 
 const MeetSocketContext = createContext();
 
-const socket = io('https://consultation.tlm-test.com/');
-//const socket = io('http://localhost:5000');
+//const socket = io('https://consultation.tlm-test.com/');
+const socket = io('http://localhost:5000');
 const ConsultationMeet = ({children}) => {
     const [callAccepted, setCallAccepted] = useState(false);
     const [callEnded, setCallEnded] = useState(false);
