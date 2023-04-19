@@ -149,6 +149,9 @@
   &.is--open{
     width: 80px;
     padding: 50px 10px;
+    .bfm-navigation__btn{
+      top: 10px;
+    }
     .bfm-navigation__logo{
       position: relative;
       width: 100%;
